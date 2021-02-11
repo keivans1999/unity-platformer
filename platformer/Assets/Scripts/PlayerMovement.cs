@@ -7,7 +7,11 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeeed;
     public Rigidbody2D rb; //velocity and forces 
     
+<<<<<<< HEAD
     public Animator anim;
+=======
+    public Animator anim;    
+>>>>>>> 75f927b6bc795a3294d157e2fa294a74060f8a24
 
     public float jumpForce = 20f;
     public Transform feet;
@@ -23,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded()) {
             Jump();
         }
+<<<<<<< HEAD
 
         if (Mathf.Abs(mx) > 0.05f) {
             anim.SetBool("isRunning", true);
@@ -37,6 +42,28 @@ public class PlayerMovement : MonoBehaviour
         }
 
         anim.SetBool("isGrounded", IsGrounded());
+=======
+        if (Mathf.Abs(mx) > 0.05)
+        {
+            anim.SetBool("IsRunning", true);
+        }
+        else
+        {
+            anim.SetBool("IsRunning", false);
+        }
+
+
+        if (mx > 0f)
+        {
+            transform.localScale = new Vector3(1f,1f,1f);
+        }
+        else  if (mx < 0f)
+        {
+            transform.localScale = new Vector3(-1f,1f,1f);
+        }
+
+        anim.SetBool("IsGrounded",IsGrounded());
+>>>>>>> 75f927b6bc795a3294d157e2fa294a74060f8a24
 
     }
 
